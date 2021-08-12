@@ -1,0 +1,18 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity mux2_4to1 is
+port (
+		A : in std_logic;
+		B,C : in std_logic_vector(3 downto 0);
+		Vm : out std_logic_vector(3 downto 0)
+);
+end entity mux2_4to1;
+
+architecture bhv of mux2_4to1 is
+begin
+	Vm(3) <= (NOT (A) AND B(3)) OR (A AND C(3));
+	Vm(2) <= (NOT (A) AND B(2)) OR (A AND C(2));
+	Vm(1) <= (NOT (A) AND B(1)) OR (A AND C(1));
+	Vm(0) <= (NOT (A) AND B(0)) OR (A AND C(0));
+end architecture;

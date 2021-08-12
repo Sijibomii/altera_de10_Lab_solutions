@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity lab2_2 is
+port (
+		SW : in std_logic_vector(3 downto 0);
+		HEX0 : out std_logic_vector(0 to 6);
+		HEX1 : out std_logic_vector(0 to 6));
+
+end entity lab2_2;
+
+architecture beh of lab2_2 is
+component seg_7 is
+port(
+		x : in std_logic_vector(3 downto 0);
+		HEX :out std_logic_vector(0 to 6));
+end component seg_7;
+
+begin
+
+end architecture beh;

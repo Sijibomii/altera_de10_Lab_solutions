@@ -1,0 +1,15 @@
+|lab3_2
+SW[0] => Dlatch_func:L1.D
+SW[1] => Dlatch_func:L1.Clk
+LEDR[0] << Dlatch_func:L1.Q
+LEDR[1] << <GND>
+
+
+|lab3_2|Dlatch_func:L1
+Clk => R_g.IN1
+Clk => S_g.IN0
+D => S_g.IN1
+D => R.DATAIN
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+

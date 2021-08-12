@@ -1,0 +1,51 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY two_to_one_mux IS
+PORT ( 
+	U : std_logic_vector(1 downto 0);
+	V : std_logic_vector(1 downto 0);
+	W : std_logic_vector(1 downto 0);
+	X : std_logic_vector(1 downto 0);
+	S : std_logic_vector(1 downto 0);
+	HEX1: out std_logic_vector(7 downto 0);
+	LEDR0: out std_logic_vector(1 downto 0);
+	Z: out std_logic_vector(7 downto 0);	
+);
+END two_to_one_mux;
+
+ARCHITECTURE Behavior OF two_to_one_mux IS
+BEGIN
+
+
+END Behavior
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity two_bit_to_7seg is
+ port( in2 : in std_logic_vector(1 downto 0);
+			out7: out std_logic_vector(7 downto 0)
+			);
+end entity two_bit_to_7seg;
+
+
+
+ARCHITECTURE decode OF two_bit_to_7seg IS
+BEGIN
+	process(in2)
+	begin
+		case(in2) is 
+			when "0000" => out7<= "11000000";
+			when "0001" => out7<= "11111001";
+			when "0010" => out7<= "10100100";
+			when "0011" => out7<= "10110000";
+			when "0100" => out7<= "10011001";
+			when "0101" => out7<= "10010011";
+			when "0110" => out7<= "10000010";
+			when "0111" => out7<= "11111000";
+			when "1111" => out7<= "10000000";
+			when others => out7<= "11000000";
+	end case;
+	end process;
+END ARCHITECTURE decode;

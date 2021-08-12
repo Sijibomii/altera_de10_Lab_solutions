@@ -1,0 +1,20 @@
+library ieee;
+use ieee.stD_logic_1164.all;
+
+entity decoder_1 is
+port (
+		in_d : in stD_logic;
+		out_d : out stD_logic_vector(0 to 6)
+);
+enD entity decoder_1;
+
+architecture bhv of circuit_B is
+begin
+		Dc(0) <= zb;
+		Dc(1) <= '0';
+		Dc(2) <= '0';
+		Dc(3) <= zb;
+		Dc(4) <= zb;
+		Dc(5) <= zb;
+		Dc(6) <= '1';
+enD architecture;

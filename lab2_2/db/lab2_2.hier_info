@@ -1,0 +1,116 @@
+|lab2_2
+SW[0] => circuit_A:circ_A.in_a[0]
+SW[0] => comparator:comp.in_c[0]
+SW[0] => mux_4:mux_4_2.b[0]
+SW[1] => circuit_A:circ_A.in_a[1]
+SW[1] => comparator:comp.in_c[1]
+SW[1] => mux_4:mux_4_2.b[1]
+SW[2] => circuit_A:circ_A.in_a[2]
+SW[2] => comparator:comp.in_c[2]
+SW[2] => mux_4:mux_4_2.b[2]
+SW[3] => circuit_A:circ_A.in_a[3]
+SW[3] => comparator:comp.in_c[3]
+SW[3] => mux_4:mux_4_2.b[3]
+HEX0[6] << seg_7:seg0.HEX[6]
+HEX0[5] << seg_7:seg0.HEX[5]
+HEX0[4] << seg_7:seg0.HEX[4]
+HEX0[3] << seg_7:seg0.HEX[3]
+HEX0[2] << seg_7:seg0.HEX[2]
+HEX0[1] << seg_7:seg0.HEX[1]
+HEX0[0] << seg_7:seg0.HEX[0]
+HEX1[6] << decoder_1:decoder.out_d[6]
+HEX1[5] << decoder_1:decoder.out_d[5]
+HEX1[4] << decoder_1:decoder.out_d[4]
+HEX1[3] << decoder_1:decoder.out_d[3]
+HEX1[2] << decoder_1:decoder.out_d[2]
+HEX1[1] << decoder_1:decoder.out_d[1]
+HEX1[0] << decoder_1:decoder.out_d[0]
+
+
+|lab2_2|circuit_A:circ_A
+in_a[0] => out_a[0].DATAIN
+in_a[1] => out_a.IN1
+in_a[1] => out_a[1].DATAIN
+in_a[2] => out_a.IN0
+in_a[3] => out_a.IN1
+in_a[3] => out_a[3].DATAIN
+out_a[0] <= in_a[0].DB_MAX_OUTPUT_PORT_TYPE
+out_a[1] <= in_a[1].DB_MAX_OUTPUT_PORT_TYPE
+out_a[2] <= out_a.DB_MAX_OUTPUT_PORT_TYPE
+out_a[3] <= in_a[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2_2|comparator:comp
+in_c[0] => ~NO_FANOUT~
+in_c[1] => out_c.IN0
+in_c[2] => out_c.IN1
+in_c[3] => out_c.IN1
+out_c <= out_c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2_2|decoder_1:decoder
+in_d => out_d[5].DATAIN
+in_d => out_d[0].DATAIN
+in_d => out_d[3].DATAIN
+in_d => out_d[4].DATAIN
+out_d[6] <= <VCC>
+out_d[5] <= in_d.DB_MAX_OUTPUT_PORT_TYPE
+out_d[4] <= in_d.DB_MAX_OUTPUT_PORT_TYPE
+out_d[3] <= in_d.DB_MAX_OUTPUT_PORT_TYPE
+out_d[2] <= <GND>
+out_d[1] <= <GND>
+out_d[0] <= in_d.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2_2|mux_4:mux_4_2
+a => Z.IN0
+a => Z.IN0
+a => Z.IN0
+a => Z.IN0
+a => Z.IN0
+a => Z.IN0
+a => Z.IN0
+a => Z.IN0
+b[0] => Z.IN1
+b[1] => Z.IN1
+b[2] => Z.IN1
+b[3] => Z.IN1
+c[0] => Z.IN1
+c[1] => Z.IN1
+c[2] => Z.IN1
+c[3] => Z.IN1
+Z[0] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[2] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[3] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2_2|seg_7:seg0
+x[0] => y.IN1
+x[0] => y.IN1
+x[0] => y.IN1
+x[0] => y.IN1
+x[0] => y.IN1
+x[0] => y.IN1
+x[0] => y.IN1
+x[0] => y.IN1
+x[1] => y.IN1
+x[1] => y.IN1
+x[1] => y.IN1
+x[1] => y.IN1
+x[1] => y.IN1
+x[2] => y.IN0
+x[2] => y.IN0
+x[2] => y.IN0
+x[3] => y.IN1
+x[3] => y.IN1
+x[3] => y.IN1
+HEX[6] <= y.DB_MAX_OUTPUT_PORT_TYPE
+HEX[5] <= y.DB_MAX_OUTPUT_PORT_TYPE
+HEX[4] <= y.DB_MAX_OUTPUT_PORT_TYPE
+HEX[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
+HEX[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+HEX[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+HEX[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+

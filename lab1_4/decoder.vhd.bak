@@ -1,0 +1,24 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity two_bit_to_7seg is
+ port( in2 : in std_logic_vector(1 downto 0);
+			out7: out std_logic_vector(7 downto 0)
+			);
+end entity two_bit_to_7seg;
+
+
+
+ARCHITECTURE decode OF two_bit_to_7seg IS
+BEGIN
+	process(in2)
+	begin
+		case(in2) is 
+			when "00" => out7<= "11000000";
+			when "01" => out7<= "11111001";
+			when "10" => out7<= "10100100";
+			when "11" => out7<= "10110000";
+			when others => out7<= "11000000";
+	end case;
+	end process;
+END ARCHITECTURE decode;

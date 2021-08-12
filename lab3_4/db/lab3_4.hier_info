@@ -1,0 +1,30 @@
+|lab3_4
+Clk => Gated_Dlatch:g.Clk
+Clk => Pos_trigg:p.Clk
+Clk => Neg_trigg:n.Clk
+D => Gated_Dlatch:g.D
+D => Pos_trigg:p.D
+D => Neg_trigg:n.D
+Qa << Gated_Dlatch:g.Q
+Qb << Pos_trigg:p.Q
+Qc << Neg_trigg:n.Q
+
+
+|lab3_4|Gated_Dlatch:g
+D => Q$latch.DATAIN
+Clk => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3_4|Pos_trigg:p
+Clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3_4|Neg_trigg:n
+Clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

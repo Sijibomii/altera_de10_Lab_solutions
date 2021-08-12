@@ -1,0 +1,56 @@
+|two_to_one_mux
+U[0] => sM[0].DATAB
+U[1] => sM[1].DATAB
+V[0] => sM.DATAB
+V[1] => sM.DATAB
+W[0] => sM.DATAB
+W[1] => sM.DATAB
+X[0] => sM.DATAA
+X[1] => sM.DATAA
+S[0] => Equal0.IN1
+S[0] => Equal1.IN0
+S[0] => Equal2.IN1
+S[1] => Equal0.IN0
+S[1] => Equal1.IN1
+S[1] => Equal2.IN0
+HEX1[0] << two_bit_to_7seg:dsp5.out7[0]
+HEX1[1] << two_bit_to_7seg:dsp5.out7[1]
+HEX1[2] << two_bit_to_7seg:dsp5.out7[2]
+HEX1[3] << two_bit_to_7seg:dsp5.out7[3]
+HEX1[4] << two_bit_to_7seg:dsp5.out7[4]
+HEX1[5] << two_bit_to_7seg:dsp5.out7[5]
+HEX1[6] << two_bit_to_7seg:dsp5.out7[6]
+HEX1[7] << two_bit_to_7seg:dsp5.out7[7]
+LEDR0[0] << sM[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR0[1] << sM[1].DB_MAX_OUTPUT_PORT_TYPE
+Z[0] << <GND>
+Z[1] << <GND>
+Z[2] << <GND>
+Z[3] << <GND>
+Z[4] << <GND>
+Z[5] << <GND>
+Z[6] << <GND>
+Z[7] << <GND>
+
+
+|two_to_one_mux|two_bit_to_7seg:dsp5
+in2[0] => Mux0.IN5
+in2[0] => Mux1.IN5
+in2[0] => Mux2.IN5
+in2[0] => Mux3.IN5
+in2[0] => out7[4].DATAIN
+in2[1] => Mux0.IN4
+in2[1] => Mux1.IN4
+in2[1] => Mux2.IN4
+in2[1] => Mux3.IN4
+in2[1] => out7[6].DATAIN
+out7[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+out7[1] <= <GND>
+out7[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+out7[3] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+out7[4] <= in2[0].DB_MAX_OUTPUT_PORT_TYPE
+out7[5] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+out7[6] <= in2[1].DB_MAX_OUTPUT_PORT_TYPE
+out7[7] <= <VCC>
+
+

@@ -1,0 +1,24 @@
+|lab3_3
+SW[0] => Dlatch_f:MASTER.D
+SW[1] => Dlatch_f:SLAVE.Clk
+SW[1] => Dlatch_f:MASTER.Clk
+LEDR[0] << Dlatch_f:SLAVE.Q
+LEDR[1] << <GND>
+
+
+|lab3_3|Dlatch_f:MASTER
+Clk => R_g.IN1
+Clk => S_g.IN0
+D => S_g.IN1
+D => R.DATAIN
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3_3|Dlatch_f:SLAVE
+Clk => R_g.IN1
+Clk => S_g.IN0
+D => S_g.IN1
+D => R.DATAIN
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
